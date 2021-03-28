@@ -8,7 +8,7 @@ function handleSubmit(event) {
 
     if (Client.validateURL(formText)) {
         console.log("::: Form Submitted :::");
-        getTheData("https://rocky-hamlet-43473.herokuapp.com//validate", { url: formText }).then(
+        getTheData("https://rocky-hamlet-43473.herokuapp.com/validate", { url: formText }).then(
             (res) => {
                 console.log(res);
                 const results = document.getElementById("evaluation-result");
