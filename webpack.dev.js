@@ -6,12 +6,12 @@ const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPl
 
 module.exports = {
     mode: "development",
-    devtool: "source-map",
     entry: "./src/client/index.js",
     output: {
         libraryTarget: "var",
         library: "Client",
     },
+    devtool: "source-map",
     module: {
         rules: [
             {

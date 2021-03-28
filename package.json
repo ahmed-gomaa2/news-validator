@@ -6,8 +6,8 @@
     "test": "jest",
     "start": "nodemon src/server/index.js",
     "build-prod": "webpack --config webpack.prod.js",
-    "build-dev": "webpack serve  --config webpack.dev.js --open"
-    
+    "build-dev": "webpack serve --config webpack.dev.js --open",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install && npm run build-prod"
   },
   "keywords": [],
   "author": "",
