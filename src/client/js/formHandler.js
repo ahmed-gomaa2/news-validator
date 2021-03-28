@@ -44,6 +44,9 @@ const getTheData = async (url = "", data = {}) => {
         headers: {
             "Content-Type": "application/json",
         },
+        credentials: "same-origin",
+        mode: "cors",
+        body: JSON.stringify(data),
     };
 
     //getting the response from the api
