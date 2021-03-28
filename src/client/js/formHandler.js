@@ -8,27 +8,29 @@ function handleSubmit(event) {
 
     if (Client.validateURL(formText)) {
         console.log("::: Form Submitted :::");
-        getTheData("/validate", { url: formText }).then((res) => {
-            console.log(res);
-            const results = document.getElementById("evaluation-result");
-            for (const property in res) {
-                if (
-                    property === "confidence" ||
-                    property === "model" ||
-                    property === "irony" ||
-                    property === "subjectivity" ||
-                    property === "score_tag" ||
-                    property === "agreement"
-                ) {
-                    const li = document.createElement("LI");
-                    const text = document.createTextNode(`${property}: ` + res[property]);
-                    li.appendChild(text);
-                    results.appendChild(li);
-                } else {
-                    console.log("fladkjflasjf");
+        getTheData("https://rocky-hamlet-43473.herokuapp.com//validate", { url: formText }).then(
+            (res) => {
+                console.log(res);
+                const results = document.getElementById("evaluation-result");
+                for (const property in res) {
+                    if (
+                        property === "confidence" ||
+                        property === "model" ||
+                        property === "irony" ||
+                        property === "subjectivity" ||
+                        property === "score_tag" ||
+                        property === "agreement"
+                    ) {
+                        const li = document.createElement("LI");
+                        const text = document.createTextNode(`${property}: ` + res[property]);
+                        li.appendChild(text);
+                        results.appendChild(li);
+                    } else {
+                        console.log("fladkjflasjf");
+                    }
                 }
             }
-        });
+        );
     } else {
         alert("Please Enter a valid URL!");
     }
