@@ -41,3 +41,17 @@ app.post("/validate", async (req, res) => {
     const ValidationData = await response.data;
     res.json(ValidationData);
 });
+
+// Serve static assets in production
+if (process.env.NODE_ENV === "production") {
+    // Express will serve up production assets
+    // like our main.js file, or main.css file!
+    app.use(express.static("dist"));
+
+    // Express will serve up the index.html file
+    // if it doesn't recognize the route
+    const path = require("path");
+    app.get("*", (req, res) => {
+        res.sendFile(path.resolve(__dirname, "dist", "index.html"));
+    });
+}
