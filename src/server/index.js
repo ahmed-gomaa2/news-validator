@@ -9,9 +9,11 @@ const mockAPIResponse = require("./mockAPI.js");
 
 const app = express();
 
-app.use(express.static("dist"));
 app.use(cors());
-app.use(express.json());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use(express.static("dist"));
 
 console.log(__dirname);
 
