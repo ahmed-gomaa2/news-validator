@@ -43,5 +43,7 @@
     "webpack-bundle-analyzer": "^4.4.0",
     "webpack-dev-server": "^3.11.2",
     "workbox-webpack-plugin": "^6.1.2"
-  }
+  },
+  "proxy": "http://localhost:8081"
+
 }

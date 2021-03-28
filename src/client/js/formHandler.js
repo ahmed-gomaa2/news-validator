@@ -8,7 +8,7 @@ function handleSubmit(event) {
 
     if (Client.validateURL(formText)) {
         console.log("::: Form Submitted :::");
-        getTheData("http://localhost:8081/validate", { url: formText }).then((res) => {
+        getTheData("/validate", { url: formText }).then((res) => {
             console.log(res);
             const results = document.getElementById("evaluation-result");
             for (const property in res) {
