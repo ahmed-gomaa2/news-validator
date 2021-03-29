@@ -10,4 +10,5 @@ function validateURL(inputURL) {
     }
 }
 
+window.validateURL = validateURL;
 export { validateURL };

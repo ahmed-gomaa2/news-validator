@@ -6,7 +6,7 @@ function handleSubmit(event) {
     // check what text was put into the form field
     let formText = document.getElementById("url").value;
 
-    if (Client.validateURL(formText)) {
+    if (validateURL(formText)) {
         console.log("::: Form Submitted :::");
         getTheData("https://rocky-hamlet-43473.herokuapp.com/validate", { url: formText }).then(
             (res) => {
@@ -61,5 +61,6 @@ const getTheData = async (url = "", data = {}) => {
         console.log(e);
     }
 };
+window.handleSubmit = handleSubmit;
 
 export { handleSubmit };
